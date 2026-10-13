@@ -1,14 +1,18 @@
 # Listing intelligence
 
-Compare evidence, cost and resale potential. A portfolio starter by Michael Rizzo.
+Compare evidence, cost and resale potential. A public engineering case study by Michael Rizzo.
 
-**Status: runnable local deterministic demo with synthetic data. Live API adapters and public hosting are not implemented.**
+**Public case study: tested Python implementation and an interactive browser demonstration using synthetic data. Live AI and external API adapters are not connected.**
 
-[Portfolio](https://michaelrizzo2.github.io/#projects) · [Source](https://github.com/michaelrizzo2/ai-listing-scorer)
+[Portfolio](https://michaelrizzo2.github.io/#projects) · [Try the interactive demo](https://michaelrizzo2.github.io/#demo-listings) · [Source](https://github.com/michaelrizzo2/ai-listing-scorer)
 
 ## Implemented behavior
 
-Compare separate relevance and condition judgments, then inspect integer-cent landed cost and potential profit. Weights change ranking without repeating judgments. Missing evidence stays visible and prevents the complete-evidence classification. Initial judgments are fixture values; no AI or marketplace calls occur. Purchase tax and selling fees are illustrative assumptions, not current platform fees.
+Compare separate relevance and condition judgments, then inspect integer-cent landed cost and potential profit. Weights change ranking without repeating judgments. Missing evidence stays visible and prevents the complete-evidence classification. Displayed judgments are fixture values; no AI or marketplace calls occur. Purchase tax and selling fees are illustrative assumptions, not current platform fees.
+
+## Public demonstration
+
+The linked GitHub Pages demo runs in JavaScript, with no install or credentials required. Its calculations, rankings and gate outcomes were checked against the Python implementation across 32 combined scenario/parameter cases. Browser approval illustrates the review step; the Python repair service owns session and proposal validation.
 
 ## Run locally
 
@@ -33,8 +37,8 @@ The application uses a small flat file layout: `app.py` contains the typed reque
 
 Run the tests above. They verify input rejection, domain calculations and the specific decision boundaries, not model accuracy. Synthetic scenarios demonstrate behavior but do not establish real-world business impact or trading performance. No private customer records or credentials belong in this repository.
 
-## Next milestone
+## Integration design
 
 Add TypeSafe Score judgments for relevance/condition, and a separate evidence-completeness Noul. Add authorized eBay Browse API retrieval, dated source links, calibrated labeled evaluations and real fee configuration.
 
-TypeSafe integration design follows the current [API](https://docs.typesafe.ai/api), [Python SDK](https://docs.typesafe.ai/sdk/python) and [composite scoring](https://docs.typesafe.ai/patterns/composite-scoring) documentation. Planned model behavior is not represented as implemented inference.
+TypeSafe integration design follows the current [API](https://docs.typesafe.ai/api), [Python SDK](https://docs.typesafe.ai/sdk/python) and [composite scoring](https://docs.typesafe.ai/patterns/composite-scoring) documentation. Model adapter design is separate from the demonstrated deterministic behavior.
