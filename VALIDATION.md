@@ -11,3 +11,7 @@
 
 
 No marketplace connection or model call; relevance and condition are explicit fictional fixture judgments. Eligibility for review is a rubric, not authorization to purchase. Real fees, tax treatment, sale prices and repair costs need independent verification.
+
+## October 14 UI and HTTPS update
+
+Approved loading-state fix preserves actual asset-failure errors. Responsive chart geometry increases measured phone axis-text height from about 6px to 14px at390px, with no horizontal overflow. Shared JavaScript domain calculations are unchanged. The Funnel gateway is enabled only for repair port10000. Both public relay addresses pass TLS1.3 and certificate hostname/chain validation; independent phone evidence is still pending.
