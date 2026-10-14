@@ -1,22 +1,18 @@
 # Listing intelligence
 
-Compare evidence, cost and resale potential. A public engineering case study by Michael Rizzo.
+[Portfolio](https://michaelrizzo2.github.io/#projects) · [Try the case study](https://michaelrizzo2.github.io/#demo-listings)
 
-**Public case study: tested Python implementation and an interactive browser demonstration using synthetic data. Live AI and external API adapters are not connected.**
+Compare fictional listings using separate **target match, evidence completeness and risk**. A wrong target no longer counts as missing evidence. The enhanced `/api/evidence` endpoint accepts target and cost assumptions; `evidence.py` independently computes the browser’s results. Original preset `/api/run` remains as a legacy fixture demonstration.
 
-[Portfolio](https://michaelrizzo2.github.io/#projects) · [Try the interactive demo](https://michaelrizzo2.github.io/#demo-listings) · [Source](https://github.com/michaelrizzo2/ai-listing-scorer)
+Projected margin includes purchase, inbound shipping, illustrative 7% purchase tax, repair reserve, illustrative 13% selling fee, outbound shipping, labor, returns reserve and overhead. Edit the last four assumptions in the UI. Costs use integer cents; resale values and rates are illustrative, not current marketplace pricing or guaranteed profit. Missing evidence remains visible regardless of ranking.
 
-## Implemented behavior
+## Limits
 
-Compare separate relevance and condition judgments, then inspect integer-cent landed cost and potential profit. Weights change ranking without repeating judgments. Missing evidence stays visible and prevents the complete-evidence classification. Displayed judgments are fixture values; no AI or marketplace calls occur. Purchase tax and selling fees are illustrative assumptions, not current platform fees.
+No marketplace connection or model call; relevance and condition are explicit fictional fixture judgments. Eligibility for review is a rubric, not authorization to purchase. Real fees, tax treatment, sale prices and repair costs need independent verification.
 
-## Public demonstration
+## Run and verify
 
-The linked GitHub Pages demo runs in JavaScript, with no install or credentials required. Its calculations, rankings and gate outcomes were checked against the Python implementation across 32 combined scenario/parameter cases. Browser approval illustrates the review step; the Python repair service owns session and proposal validation.
-
-## Run locally
-
-Python 3.11 or newer:
+Python 3.11+:
 
 ```bash
 python3 -m venv .venv
@@ -25,20 +21,6 @@ python3 -m venv .venv
 .venv/bin/python -m uvicorn app:app --host 127.0.0.1 --port 8012
 ```
 
-Open http://127.0.0.1:8012. API documentation is at `/docs`; `/api/health` reports the active mode. Production dependencies alone are in `requirements.txt`. No credentials are needed or loaded for this deterministic milestone.
+Open http://127.0.0.1:8012. The shared browser workspace uses published evidence assets; enhanced Python APIs expose independent reproducible calculations. All four browser modes are included to make comparison easy; each repository’s own Python implementation is its named project. Repair live mode additionally needs the separately configured backend on 8021. No credentials are bundled in browser files.
 
-## Architecture
-
-Browser → FastAPI validation → deterministic workflow/ranking/backtest → inspectable structured response.
-
-The application uses a small flat file layout: `app.py` contains the typed request schema and workflow; `ui.html`, `styles.css` and `ui.js` implement the interface; `test_app.py` exercises the important boundaries. This keeps the initial case study easy to clone and run.
-
-## Verification and limitations
-
-Run the tests above. They verify input rejection, domain calculations and the specific decision boundaries, not model accuracy. Synthetic scenarios demonstrate behavior but do not establish real-world business impact or trading performance. No private customer records or credentials belong in this repository.
-
-## Integration design
-
-Add TypeSafe Score judgments for relevance/condition, and a separate evidence-completeness Noul. Add authorized eBay Browse API retrieval, dated source links, calibrated labeled evaluations and real fee configuration.
-
-TypeSafe integration design follows the current [API](https://docs.typesafe.ai/api), [Python SDK](https://docs.typesafe.ai/sdk/python) and [composite scoring](https://docs.typesafe.ai/patterns/composite-scoring) documentation. Model adapter design is separate from the demonstrated deterministic behavior.
+7 Python tests pass for this project. Portfolio tests and 45 enhanced Python/browser parity combinations validate the shared outputs. See `VALIDATION.md`.
